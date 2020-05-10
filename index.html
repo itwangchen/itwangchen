@@ -41,6 +41,18 @@
 </head>
 
 <body>
+    <h3>看板娘为：</h3>
+    <p>欢迎 star：<a href="https://juejin.im/user/5c175d9e518825046c2f62b4">我的掘金</a>
+    </p>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="btn-group">
+                <button class="btn btn-info">haru01</button> <button data-toggle="dropdown"
+                    class="btn dropdown-toggle"><span class="caret"></span></button>
+                <ul class="dropdown-menu"></ul>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="/src/L2Dwidget.min.js"></script>
 <script type="text/javascript">
@@ -118,22 +130,6 @@
     let tId = getUrlQuery('id') || 'haru01';
     $('.btn-info').text(tId);
     initL2Dwidget(tId);
-    function AudioPlayBystr(str_tip) {
-        var str_tip = '"这只是一个测试，别问我为什么，就是这样，你听就完事了,再逼逼,我就干你!';
-        var msg = new SpeechSynthesisUtterance();
-        msg.rate = 0.8; //播放语速
-        msg.pitch = 1; //音调高低
-        msg.text = str_tip;
-        msg.volume = 10;//播放音量
-        msg.lang = "zh-CN";//语言类型
-        speechSynthesis.speak(msg);//播放		
-        console.log(msg)
-        msg.onstart = function () { console.log("开始播放会调用我") };
-        msg.onend = function () { console.log("播放完成才会调用我") };
-        msg.onpause = function () { console.log("播放暂停才会调用我") };
-        msg.onresume = function () { console.log("播放重新开始才会调用我") };
-        msg.onerror = function (error) { console.log("播放出现错误才会调用我" + error) };
-    }
 
 // L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});
 </script>
