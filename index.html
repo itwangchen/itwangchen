@@ -55,8 +55,6 @@
 <script type="text/javascript">
     var selectAry = [
         ["chitose"],
-        ["epsilon2.1", "epsilon2_1"],
-        ["gantzert_felixander", "gf"],
         ["haru01"],
         ["haru02"],
         ["haruto"],
@@ -108,7 +106,7 @@
                 display: {
                     position: 'right'
                 },
-                "model": { "jsonPath": "packages/live2d-widget-model-" + modalName + "/assets/" + selectId + ".model.json" },
+                "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-" + modalName+"@1.0.5" + "/assets/" + selectId + ".model.json" },
                 "mobile": { "show": true, scale: 0.5 },
             });
     }
@@ -124,7 +122,7 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
-    let tId = getUrlQuery('id') || 'haru01';
+    let tId = getUrlQuery('id') || 'izumi';
     $('.btn-info').text(tId);
     initL2Dwidget(tId);
 
