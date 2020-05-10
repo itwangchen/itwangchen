@@ -13,13 +13,14 @@
 </head>
 
 <body>
-
+    <button onclick="AudioPlayBystr()">test</button>
     <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
     <script>
         L2Dwidget.init({
             "model": {
                 jsonPath:
-                    "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+                    // "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json",
+                    "https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.physics.json",
                 "scale": 1
             }, "display": {
                 "position": "right", "width": 150, "height": 300,
@@ -28,7 +29,22 @@
             "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
         });
         console.log('jenkins_test');
-        
+        function AudioPlayBystr(str_tip) {
+            var str_tip = '"这只是一个测试，别问我为什么，就是这样，你听就完事了,再逼逼,我就干你!';
+            var msg = new SpeechSynthesisUtterance();
+            msg.rate = 0.8; //播放语速
+            msg.pitch = 1; //音调高低
+            msg.text = str_tip;
+            msg.volume = 10;//播放音量
+            msg.lang = "zh-CN";//语言类型
+            speechSynthesis.speak(msg);//播放		
+            console.log(msg)
+            msg.onstart = function () { console.log("开始播放会调用我") };
+            msg.onend = function () { console.log("播放完成才会调用我") };
+            msg.onpause = function () { console.log("播放暂停才会调用我") };
+            msg.onresume = function () { console.log("播放重新开始才会调用我") };
+            msg.onerror = function (error) { console.log("播放出现错误才会调用我" + error) };
+        }
     </script>
 </body>
 
