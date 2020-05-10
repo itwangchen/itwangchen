@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>因吹斯汀</title>
@@ -103,7 +104,7 @@
                 display: {
                     position: 'right'
                 },
-                "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-" + modalName+"@1.0.5" + "/assets/" + selectId + ".model.json" },
+                "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-" + modalName + "@1.0.5" + "/assets/" + selectId + ".model.json" },
                 "mobile": { "show": true, scale: 0.5 },
             });
     }
@@ -122,7 +123,7 @@
     let tId = getUrlQuery('id') || 'izumi';
     $('.btn-info').text(tId);
     initL2Dwidget(tId);
-
+    console.log('dev');
 // L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});
 </script>
 
